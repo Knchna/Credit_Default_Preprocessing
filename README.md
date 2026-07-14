@@ -322,11 +322,8 @@ Run the notebook from the first cell to the last.
 | Team Member | Contribution |
 |-------------|--------------|
 | **Gokul** | Dataset Understanding & Initial Exploratory Data Analysis (EDA): Loaded the dataset, inspected its structure, identified numerical and categorical features, checked missing values and duplicates, validated categorical values, removed irrelevant columns (ID), identified the target variable, and performed univariate analysis on numerical, categorical, and target variables. |
-
 | **Devadeth** | Outlier Handling & Visualization: Detected and analyzed outliers using the IQR method and boxplots, performed bivariate analysis between features and the target variable, created comparative visualizations, and documented key observations from the analysis. |
-
 | **Kanchana** | Feature Selection: Conducted correlation analysis using a correlation matrix and heatmap, evaluated feature importance using Mutual Information, identified multicollinearity, selected relevant features, and prepared the final feature set for modeling. |
-
 | **Rinimol R** | Feature Engineering & Data Preprocessing: Performed feature engineering where appropriate, documented preprocessing decisions, identified numerical features for scaling, applied **StandardScaler** after train-test splitting to prevent data leakage, verified the processed dataset, saved the final preprocessed dataset, summarized the preprocessing workflow, and prepared the GitHub project documentation (README). |
 
 ---
