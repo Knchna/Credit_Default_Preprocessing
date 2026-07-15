@@ -267,9 +267,7 @@ This ensures consistent preprocessing while avoiding information leakage.
 
 ### 11.Encoding Categorical Features
 
-- No encoding was performed because all categorical variables
-- (SEX, EDUCATION, MARRIAGE, PAY_0 to PAY_6)
-- are already represented as numerical codes in the dataset.
+- No encoding was performed because all categorical variables (SEX, EDUCATION, MARRIAGE, PAY_0 to PAY_6) are already represented as numerical codes in the dataset.
 
 ---
 
