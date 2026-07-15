@@ -315,7 +315,6 @@ Credit_Default_Preprocessing.ipynb
 Run the notebook from the first cell to the last.
 
 ---
-## Team Members
 
 ## Team Members
 
