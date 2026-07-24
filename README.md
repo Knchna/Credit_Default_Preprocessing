@@ -1,6 +1,6 @@
 # Credit Card Default Prediction using Machine Learning
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Knchna/Credit_Default_Preprocessing/blob/main/Credit_Default_Preprocessing.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Knchna/Credit_Card_Default_Prediction/blob/main/Credit_Default_Prediction.ipynb)
 
 An end-to-end machine learning project on the UCI Credit Card Default dataset, covering data preprocessing, exploratory data analysis (EDA), feature analysis, classification model development, hyperparameter tuning, ensemble methods, and model evaluation.
 
