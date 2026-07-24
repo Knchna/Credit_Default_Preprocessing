@@ -51,11 +51,11 @@ Target Variable:
 
 ## Project Structure
 
-Credit_Default_Prediction/
-│
-├── Credit_Default_Prediction.ipynb
-├── default of credit card clients.xls
-├── README.md
+Credit_Card_Default_Prediction/   
+│   
+├── Credit_Default_Prediction.ipynb    
+├── default of credit card clients.xls    
+├── README.md    
 
 ---
 
@@ -194,40 +194,40 @@ The best-performing version of each model was compared to determine the overall 
 
 ## Project Workflow
 
-Load Dataset
-      │
-      ▼
-Initial Exploratory Data Analysis
-      │
-      ▼
-Data Cleaning
-      │
-      ▼
-Feature Analysis
-      │
-      ▼
-Train-Test Split
-      │
-      ▼
-Feature Scaling
-      │
-      ▼
-Baseline Model Training
-      │
-      ▼
-Cross Validation
-      │
-      ▼
-Hyperparameter Tuning
-      │
-      ▼
-Ensemble Learning
-      │
-      ▼
-ANN Implementation
-      │
-      ▼
-Final Model Comparison
+Load Dataset  
+      │  
+      ▼  
+Initial Exploratory Data Analysis  
+      │  
+      ▼  
+Data Cleaning  
+      │  
+      ▼  
+Feature Analysis   
+      │  
+      ▼  
+Train-Test Split  
+      │  
+      ▼  
+Feature Scaling  
+      │  
+      ▼  
+Baseline Model Training  
+      │  
+      ▼  
+Cross Validation  
+      │  
+      ▼  
+Hyperparameter Tuning  
+      │  
+      ▼  
+Ensemble Learning  
+      │  
+      ▼  
+ANN Implementation  
+      │  
+      ▼  
+Final Model Comparison   
 
 ---
 
