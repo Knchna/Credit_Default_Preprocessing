@@ -1,22 +1,19 @@
-# Credit_Default_Preprocessing
-Machine Learning data preprocessing and EDA project on the UCI Credit Card Default dataset.
+# Credit Card Default Prediction using Machine Learning
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]([Credit_Default_Preprocessing.ipynb](https://github.com/Knchna/Credit_Default_Preprocessing/blob/main/Credit_Default_Preprocessing.ipynb))
+
+An end-to-end machine learning project on the UCI Credit Card Default dataset, covering data preprocessing, exploratory data analysis (EDA), feature analysis, classification model development, hyperparameter tuning, ensemble methods, and model evaluation.
 
 ### Team Project
 Dataset: Default of Credit Card Clients (UCI Repository)
 
 ## Project Overview
 
-This project focuses on preprocessing the Default of Credit Card Clients dataset to prepare it for machine learning models that predict whether a customer will default on their credit card payment in the following month.
-
-The notebook performs data cleaning, exploratory data analysis (EDA), feature analysis, outlier detection, feature scaling, and train-test splitting to ensure high-quality input for classification algorithm. 
-
-The final processed dataset is ready for training classification models such as Logistic Regression, Decision Tree, Random Forest, XGBoost, and other machine learning algorithms.
-
-The goal of this project is to produce a clean and standardized dataset that improves model performance while preventing data leakage.
+This project aims to predict whether a credit card customer will default on the next month's payment using demographic information, payment history, bill statements, and previous payment records. Multiple machine learning models are developed, tuned, and evaluated to identify the best-performing approach for this binary classification problem.
 
 ---
 
-# Dataset Information
+## Dataset Information
 
 * **Dataset Name:** Default of Credit Card Clients
 * **Source:** UCI Machine Learning Repository
@@ -48,22 +45,23 @@ Target Variable:
 - Matplotlib
 - Seaborn
 - Scikit-learn
+- TensorFlow / Keras
 
 ---
 
 ## Project Structure
 
-Credit_Default_Preprocessing/
+Credit_Default_Prediction/
 │
-├── Credit_Default_Preprocessing.ipynb
+├── Credit_Default_Prediction.ipynb
 ├── default of credit card clients.xls
 ├── README.md
 
 ---
 
-# Dataset Features
+## Dataset Features
 
-## Customer Information
+### Customer Information
 
 | Feature   | Description                                 |
 | --------- | ------------------------------------------- |
@@ -76,7 +74,7 @@ Credit_Default_Preprocessing/
 
 ---
 
-## Payment History
+### Payment History
 
 These variables represent the customer's repayment status during the previous six months.
 
@@ -99,7 +97,7 @@ Repayment Status Codes:
 
 ---
 
-## Bill Statement Amount
+### Bill Statement Amount
 
 Outstanding bill amount for the previous six months.
 
@@ -112,7 +110,7 @@ Outstanding bill amount for the previous six months.
 
 ---
 
-## Previous Payment Amount
+### Previous Payment Amount
 
 Amount paid by the customer during the previous six months.
 
@@ -125,7 +123,7 @@ Amount paid by the customer during the previous six months.
 
 ---
 
-# Target Variable
+### Target Variable
 
 | Value | Meaning                  |
 | ----- | ------------------------ |
@@ -138,242 +136,74 @@ Amount paid by the customer during the previous six months.
 
 The following preprocessing steps were performed before model training.
 
-### 1. Import Required Libraries
-
-The notebook imports the required Python libraries for:
-
-- Data manipulation
-- Visualization
-- Feature engineering
-- Data preprocessing
-
-Libraries include:
-
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
-
----
-
-### 2. Data Loading
-
-* Loaded the Excel dataset using Pandas.
-* Verified dataset dimensions and feature names.
-
----
-
-### 3. Exploratory Data Analysis (EDA)
-
-The notebook performs:
-
-- Dataset overview
-- Data types inspection
-- Missing value analysis
-- Duplicate record detection
-- Statistical summary
-
----
-
-### 4. Data Cleaning & Missing Value Check
-
-
-Cleaning operations include:
-
-- Checked for duplicate records.
-- Removing duplicate records (if present).
-- Dropping unnecessary columns
-- Removing the **ID** column since it is only an identifier  and does not contribute to prediction.
-- Verified that the dataset contains no missing values.
-
----
-
-### 5. Data Preparation
-
-The dataset is divided into:
-
-- Numerical features
-- Categorical features
-
-This separation simplifies preprocessing and analysis.
-
----
-
-### 6. Outlier Analysis
-
-Outliers are identified using visualization techniques such as boxplots to understand the distribution of numerical variables.
-
----
-
-### 7. Feature Analysis
-
-The notebook includes:
-
-- Bivariate analysis
-- Correlation matrix
-- Heatmap visualization
-- Mutual Information analysis to evaluate feature importance
-
----
-
-### 8. Feature and Target Separation
-
-Separated the dataset into:
-
-**Features (X)**
-
-* LIMIT_BAL
-* SEX
-* EDUCATION
-* MARRIAGE
-* AGE
-* PAY_0 to PAY_6
-* BILL_AMT1 to BILL_AMT6
-* PAY_AMT1 to PAY_AMT6
-All independent variables.
-
-**Target (y)**
-
-* default payment next month
-
----
-
-### 9. Train-Test Split
-
-The data is divided into training and testing sets.
-
-- Training Data: 80%
-- Testing Data: 20%
-
-This ensures that the model is evaluated on unseen data.
-
-Splitting is performed before scaling to prevent data leakage.
-
----
-
-### 10. Feature Scaling
-
-Only numerical columns are standardized using **StandardScaler**.
-
-Scaling is performed by:
-
-- Fitting the scaler on training data
-- Transforming both training and testing data using the same scaler
-
-This ensures consistent preprocessing while avoiding information leakage.
-
----
-
-### 11.Encoding Categorical Features
-
-- No encoding was performed because all categorical variables (SEX, EDUCATION, MARRIAGE, PAY_0 to PAY_6) are already represented as numerical codes in the dataset.
-
----
-
-## Output
-
-After preprocessing, the notebook produces:
-
-- Clean dataset
-- Feature importance analysis
-- Boxplots for Outlier Detection
+- Data loading
+- Exploratory Data Analysis (EDA)
+- Data cleaning
+- Missing value verification
+- Duplicate removal
+- Dropping the ID column
+- Outlier analysis
 - Correlation analysis
-- Standardized numerical features
-- Train and test datasets ready for machine learning
-  
-These analyses helped identify feature distributions, relationships, and potential outliers.
+- Train-test split
+- Mutual Information Feature Analysis
+- Feature scaling
 
 ---
 
-## How to Run the Project
+## Machine Learning Methodology
 
-### 1. Clone the Repository
+Each team member independently implemented one baseline classification model:
 
-```bash
-git clone https://github.com/your-username/Credit_Default_Preprocessing.git
-```
+- Logistic Regression
+- Decision Tree
+- Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
 
-### 2. Move into the Project Folder
+For each model, the following workflow was performed:
 
-```bash
-cd Credit_Default_Preprocessing
-```
+- Baseline model training
+- K-Fold / Stratified K-Fold Cross-Validation
+- Hyperparameter tuning using GridSearchCV and RandomizedSearchCV
+- Suitable ensemble learning techniques (Bagging, AdaBoost) where applicable
+- Performance evaluation using classification metrics
 
-### 3. Install Required Libraries
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn openpyxl
-```
-
-### 4. Launch Jupyter Notebook
-
-```bash
-jupyter notebook
-```
-
-Open:
-
-```
-Credit_Default_Preprocessing.ipynb
-```
-
-Run the notebook from the first cell to the last.
+The best-performing variant of each model was then compared to identify the overall best traditional machine learning approach.
 
 ---
 
-## Team Members
+### Artificial Neural Network (ANN)
 
-| Team Member | Contribution |
-|-------------|--------------|
-| **Gokul** | Dataset Understanding & Initial Exploratory Data Analysis (EDA): Loaded the dataset, inspected its structure, identified numerical and categorical features, checked missing values and duplicates, validated categorical values, removed irrelevant columns (ID), identified the target variable, and performed univariate analysis on numerical, categorical, and target variables. |
-| **Devadeth** | Outlier Handling & Visualization: Detected and analyzed outliers using the IQR method and boxplots, performed bivariate analysis between features and the target variable, created comparative visualizations, and documented key observations from the analysis. |
-| **Kanchana** | Feature Selection: Conducted correlation analysis using a correlation matrix and heatmap, evaluated feature importance using Mutual Information, identified multicollinearity, selected relevant features, and prepared the final feature set for modeling. |
-| **Rinimol R** | Feature Engineering & Data Preprocessing: Performed feature engineering where appropriate, documented preprocessing decisions, identified numerical features for scaling, applied **StandardScaler** after train-test splitting to prevent data leakage, verified the processed dataset, saved the final preprocessed dataset, summarized the preprocessing workflow, and prepared the GitHub project documentation (README). |
+Each team member independently developed an Artificial Neural Network (ANN) model on their respective Git branches. The best-performing ANN architecture was selected and merged into the main project branch for the final comparison with the traditional machine learning models.
 
 ---
 
-# Machine Learning Models
+## Results
 
-This preprocessed dataset can be used with several classification algorithms, including:
+The performance of all traditional machine learning models and the final ANN model was evaluated using:
 
-* Logistic Regression
-* Decision Tree Classifier
-* Random Forest
-* Support Vector Machine (SVM)
-* K-Nearest Neighbors (KNN)
-* Naive Bayes
-* AdaBoost
-* Gradient Boosting
-* XGBoost
-* Artificial Neural Networks (ANN)
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+- Cross-Validation Score
+
+The best-performing version of each model was compared to determine the overall most effective approach for credit card default prediction.
 
 ---
 
-# Project Workflow
+## Project Workflow
 
 Load Dataset
+      │
+      ▼
+Initial Exploratory Data Analysis
       │
       ▼
 Data Cleaning
       │
       ▼
-Remove Duplicates
-      │
-      ▼
-Drop ID Column
-      │
-      ▼
-Check Missing Values
-      │
-      ▼
-Outlier Handling
-      │
-      ▼
-Bivariate Analysis
-      │
-      ▼
-Feature Selection
+Feature Analysis
       │
       ▼
 Train-Test Split
@@ -382,25 +212,85 @@ Train-Test Split
 Feature Scaling
       │
       ▼
-Model Training
+Baseline Model Training
       │
       ▼
-Model Evaluation
-
+Cross Validation
+      │
+      ▼
+Hyperparameter Tuning
+      │
+      ▼
+Ensemble Learning
+      │
+      ▼
+ANN Implementation
+      │
+      ▼
+Final Model Comparison
 
 ---
 
-# Expected Outcome
+## How to Run the Project
 
-The goal of this project is to build reliable machine learning models capable of predicting credit card payment defaults using customer demographic information, payment history, billing records, and previous payment behavior.
+### Option 1: Google Colab (Recommended)
+
+1. Clone or download this repository.
+2. Open `Credit_Default_Prediction.ipynb` in **Google Colab**.
+3. Upload the dataset (`default of credit card clients.xls`) to the Colab session.
+4. Run the notebook from the first cell to the last.
+
+> **Note:** Google Colab includes all the required libraries (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow/Keras, and OpenPyXL) by default.
+
+### Option 2: Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/Credit_Default_Prediction.git
+cd Credit_Default_Prediction
+```
+
+Install the required dependencies:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn tensorflow openpyxl
+```
+
+Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+Open `Credit_Default_Prediction.ipynb` and run all the cells.
 
 ---
 
-# Dataset Citation
+## Team Members
+
+| Team Member | Contribution |
+|-------------|--------------|
+| **Gokul V S** | Performed dataset understanding, initial Exploratory Data Analysis (EDA) and Data Cleaning. Implemented the **K-Nearest Neighbors (KNN)** classifier, performed cross-validation, hyperparameter tuning (GridSearchCV and RandomizedSearchCV), applied suitable ensemble techniques, and participated in final model comparison. |
+| **Devadeth B** | Executed Outlier Analysis, Bivariate Analysis, and visualization. Implemented the **Decision Tree** classifier, performed cross-validation, hyperparameter tuning, applied suitable ensemble techniques, developed the project's final **Artificial Neural Network (ANN)** model, and participated in final model comparison. |
+| **Kanchana Krishna** | Applied Correlation analysis, Mutual Information feature selection, and feature analysis. Implemented the **Logistic Regression** classifier, performed cross-validation, hyperparameter tuning, applied suitable ensemble techniques, and participated in final model comparison. |
+| **Rinimol R** | Completed Feature preprocessing, Scaling, documentation, and README preparation. Implemented the **Support Vector Machine (SVM)** classifier, performed cross-validation, hyperparameter tuning, applied suitable ensemble techniques, and participated in final model comparison. |
+
+---
+
+## Expected Outcome
+
+Build, optimize, and evaluate multiple machine learning models for credit card default prediction, and compare their performance to identify the most effective classification approach.
+
+---
+
+## Dataset Citation
 
 Yeh, I. C., & Lien, C. H. (2009). *The comparisons of data mining techniques for the predictive accuracy of probability of default of credit card clients*. Expert Systems with Applications, 36(2), 2473–2480.
 
-Dataset: **Default of Credit Card Clients** from the UCI Machine Learning Repository.
+Dataset: **Default of Credit Card Clients**
+
+Source: UCI Machine Learning Repository
 
 https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients
 
